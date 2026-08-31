@@ -1,0 +1,3159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Hiya Shrimali | Portfolio</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --pink: #f39ac2;
+    --pink-dark: #d86c9d;
+    --lavender: #b9a0e8;
+    --purple: #7253a6;
+    --dark: #30243d;
+    --text: #40364b;
+    --border: #efd9e7;
+    --soft: #fff7fb;
+    --white: #ffffff;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: #fffafd;
+    color: var(--text);
+    overflow-x: hidden;
+}
+
+/* ================= NAVBAR ================= */
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+    padding: 17px 6%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: rgba(255,250,253,.88);
+    backdrop-filter: blur(15px);
+
+    border-bottom: 1px solid rgba(239,217,231,.75);
+
+    transition: .3s;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 27px;
+    font-weight: 700;
+    color: var(--dark);
+}
+
+.logo span {
+    color: var(--pink);
+}
+
+.nav-links {
+    display: flex;
+    gap: 26px;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--dark);
+    font-size: 14px;
+    font-weight: 600;
+
+    position: relative;
+    transition: .3s;
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+
+    left: 0;
+    bottom: -7px;
+
+    width: 0;
+    height: 2px;
+
+    background: var(--pink);
+
+    transition: .3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--pink-dark);
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+
+/* ================= GENERAL ================= */
+
+section {
+    min-height: 100vh;
+    padding: 120px 8% 90px;
+    position: relative;
+}
+
+.section-label {
+    color: var(--pink-dark);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(40px, 5vw, 65px);
+    line-height: 1.05;
+    color: var(--dark);
+    margin-bottom: 38px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 14px 23px;
+
+    border-radius: 40px;
+
+    text-decoration: none;
+    font-weight: 700;
+
+    transition: .35s;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: var(--pink);
+    color: white;
+}
+
+.btn-primary:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(243,154,194,.4);
+}
+
+.btn-secondary {
+    background: white;
+    color: var(--dark);
+    border: 1px solid var(--border);
+}
+
+.btn-secondary:hover {
+    transform: translateY(-5px);
+    border-color: var(--pink);
+    box-shadow: 0 10px 25px rgba(70,40,80,.08);
+}
+
+
+/* ================= DECORATIONS ================= */
+
+.decor {
+    position: absolute;
+    pointer-events: none;
+    animation: float 4s ease-in-out infinite;
+    z-index: 0;
+}
+
+.decor.one {
+    top: 19%;
+    left: 5%;
+    color: var(--pink);
+    font-size: 26px;
+}
+
+.decor.two {
+    top: 32%;
+    right: 5%;
+    color: var(--lavender);
+    font-size: 31px;
+    animation-delay: 1s;
+}
+
+.decor.three {
+    bottom: 14%;
+    left: 10%;
+    color: var(--pink);
+    font-size: 22px;
+    animation-delay: 2s;
+}
+
+@keyframes float {
+
+    0%,100% {
+        transform: translateY(0) rotate(0);
+    }
+
+    50% {
+        transform: translateY(-14px) rotate(8deg);
+    }
+}
+
+
+/* ================= HERO ================= */
+
+#home {
+    background:
+        radial-gradient(circle at 10% 20%, rgba(243,154,194,.19), transparent 25%),
+        radial-gradient(circle at 90% 30%, rgba(185,160,232,.23), transparent 28%),
+        linear-gradient(135deg,#fffafd,#f7f0ff);
+
+    display: flex;
+    align-items: center;
+}
+
+.hero {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: 1.05fr .95fr;
+
+    gap: 70px;
+    align-items: center;
+}
+
+.eyebrow {
+    color: var(--pink-dark);
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 18px;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+
+    font-size: clamp(55px,7vw,92px);
+
+    line-height: .98;
+
+    color: var(--dark);
+}
+
+.hero h1 span {
+    color: var(--pink-dark);
+}
+
+.hero h2 {
+    margin-top: 25px;
+
+    font-size: 22px;
+
+    color: var(--purple);
+}
+
+.hero p {
+    max-width: 620px;
+
+    margin: 20px 0 30px;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+}
+
+.buttons {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+
+/* ================= PHOTO ================= */
+
+.photo-wrapper {
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.photo-orbit {
+    position: absolute;
+
+    width: 470px;
+    height: 470px;
+
+    border: 2px dashed rgba(243,154,194,.42);
+
+    border-radius: 50%;
+
+    animation: spin 18s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.photo-card {
+    width: 390px;
+    height: 450px;
+
+    border-radius: 45% 45% 40% 40%;
+
+    background: linear-gradient(145deg,#f6d6e8,#ded0f8);
+
+    border: 8px solid rgba(255,255,255,.85);
+
+    box-shadow: 0 25px 60px rgba(101,72,120,.16);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    position: relative;
+    z-index: 2;
+
+    transition: .5s ease;
+
+    animation: photoFloat 5s ease-in-out infinite;
+}
+
+@keyframes photoFloat {
+
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.photo-card:hover {
+    transform: rotate(2deg) scale(1.035);
+}
+
+.photo-card img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+.photo-placeholder {
+    display: none;
+}
+
+.floating-tag {
+    position: absolute;
+
+    z-index: 4;
+
+    padding: 12px 17px;
+
+    border-radius: 18px;
+
+    background: rgba(255,255,255,.93);
+
+    box-shadow: 0 10px 30px rgba(70,40,80,.12);
+
+    font-size: 13px;
+    font-weight: 700;
+
+    animation: tagFloat 4s ease-in-out infinite;
+}
+
+.tag-one {
+    top: 18%;
+    left: 2%;
+}
+
+.tag-two {
+    bottom: 18%;
+    right: 0;
+    animation-delay: 1s;
+}
+
+.tag-three {
+    top: 8%;
+    right: 5%;
+    animation-delay: 2s;
+}
+
+@keyframes tagFloat {
+
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+
+/* ================= ABOUT ================= */
+
+#about {
+    background: white;
+}
+
+.about-container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.about-box {
+    display: grid;
+
+    grid-template-columns: 1.2fr .8fr;
+
+    gap: 40px;
+
+    padding: 45px;
+
+    border-radius: 30px;
+
+    border: 1px solid var(--border);
+
+    background: #fffafd;
+
+    box-shadow: 0 20px 50px rgba(70,40,80,.06);
+}
+
+.about-text {
+    font-size: 18px;
+    line-height: 1.9;
+}
+
+.interests {
+    display: grid;
+    gap: 14px;
+}
+
+.interest {
+    padding: 18px;
+
+    border-radius: 18px;
+
+    background: white;
+
+    border: 1px solid var(--border);
+
+    transition: .35s;
+}
+
+.interest:hover {
+    transform: translateX(9px);
+
+    border-color: var(--pink);
+
+    box-shadow: 0 10px 25px rgba(243,154,194,.12);
+}
+
+
+/* ================= SKILLS ================= */
+
+#skills {
+    background: linear-gradient(135deg,#eee6ff,#fff0f7);
+}
+
+.skills-intro {
+    max-width: 680px;
+
+    line-height: 1.8;
+
+    margin-bottom: 38px;
+}
+
+.skills-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2,1fr);
+
+    gap: 24px;
+}
+
+.skill-category {
+    background: rgba(255,255,255,.76);
+
+    border: 1px solid var(--border);
+
+    border-radius: 30px;
+
+    padding: 30px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    transition: .4s ease;
+}
+
+.skill-category::before {
+    content: "";
+
+    position: absolute;
+
+    width: 120px;
+    height: 120px;
+
+    background: rgba(243,154,194,.13);
+
+    border-radius: 50%;
+
+    top: -55px;
+    right: -40px;
+}
+
+.skill-category:hover {
+    transform: translateY(-9px) rotate(.5deg);
+
+    box-shadow: 0 20px 45px rgba(80,50,100,.12);
+
+    border-color: var(--pink);
+}
+
+.skill-heading {
+    display: flex;
+    align-items: center;
+
+    gap: 13px;
+
+    margin-bottom: 22px;
+}
+
+.skill-heading-icon {
+    width: 50px;
+    height: 50px;
+
+    border-radius: 16px;
+
+    background: #fff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 25px;
+
+    box-shadow: 0 8px 20px rgba(70,40,80,.07);
+}
+
+.skill-heading h3 {
+    font-family: 'Playfair Display', serif;
+
+    font-size: 25px;
+
+    color: var(--dark);
+}
+
+.skill-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skill-pill {
+    padding: 9px 14px;
+
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: 30px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    transition: .3s;
+}
+
+.skill-pill:hover {
+    transform: translateY(-4px);
+
+    background: #fff1f7;
+
+    border-color: var(--pink);
+
+    color: var(--pink-dark);
+}
+
+
+/* ================= PROJECTS ================= */
+
+#projects {
+    background: #fffafd;
+}
+
+.projects-intro {
+    max-width: 720px;
+
+    line-height: 1.8;
+
+    margin-bottom: 45px;
+}
+
+.project-list {
+    display: grid;
+    gap: 25px;
+}
+
+.project {
+    border: 1px solid var(--border);
+
+    border-radius: 30px;
+
+    overflow: hidden;
+
+    background: white;
+
+    transition: .4s;
+}
+
+.project:hover {
+    transform: translateY(-6px);
+
+    box-shadow: 0 22px 50px rgba(90,60,100,.12);
+}
+
+.project-header {
+    padding: 30px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    cursor: pointer;
+}
+
+.project-number {
+    color: var(--pink);
+
+    font-weight: 800;
+
+    font-size: 13px;
+
+    letter-spacing: 1px;
+}
+
+.project-title {
+    font-family: 'Playfair Display', serif;
+
+    font-size: 31px;
+
+    color: var(--dark);
+
+    margin-top: 6px;
+}
+
+.project-subtitle {
+    margin-top: 8px;
+
+    color: #7d7086;
+
+    font-size: 14px;
+}
+
+.project-arrow {
+    width: 48px;
+    height: 48px;
+
+    border-radius: 50%;
+
+    background: #fff1f7;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 24px;
+
+    transition: .35s;
+}
+
+.project.open .project-arrow {
+    transform: rotate(45deg);
+
+    background: var(--pink);
+
+    color: white;
+}
+
+.project-details {
+    max-height: 0;
+
+    overflow: hidden;
+
+    transition: max-height .65s ease;
+}
+
+.project.open .project-details {
+    max-height: 800px;
+}
+
+.project-inner {
+    padding: 0 30px 35px;
+
+    display: grid;
+
+    grid-template-columns: .8fr 1.2fr;
+
+    gap: 35px;
+}
+
+.project-image {
+    min-height: 280px;
+
+    border-radius: 25px;
+
+    background: linear-gradient(135deg,#f9dceb,#e5dcff);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 70px;
+
+    transition: .4s;
+}
+
+.project.open .project-image {
+    animation: projectImage .7s ease;
+}
+
+@keyframes projectImage {
+
+    from {
+        opacity: 0;
+        transform: scale(.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.project-info {
+    display: grid;
+    gap: 13px;
+}
+
+.project-info div {
+    padding: 15px;
+
+    background: #fff8fc;
+
+    border-radius: 15px;
+
+    line-height: 1.55;
+
+    animation: projectText .5s ease both;
+}
+
+.project-info div:nth-child(2) {
+    animation-delay: .08s;
+}
+
+.project-info div:nth-child(3) {
+    animation-delay: .16s;
+}
+
+.project-info div:nth-child(4) {
+    animation-delay: .24s;
+}
+
+.project-info div:nth-child(5) {
+    animation-delay: .32s;
+}
+
+@keyframes projectText {
+
+    from {
+        opacity: 0;
+        transform: translateX(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.project-info strong {
+    color: var(--pink-dark);
+}
+
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 7px;
+
+    margin-top: 9px;
+}
+
+.tech-tag {
+    padding: 6px 10px;
+
+    background: white;
+
+    border-radius: 20px;
+
+    border: 1px solid var(--border);
+
+    font-size: 11px;
+
+    font-weight: 600;
+}
+
+
+/* ================= EDUCATION ================= */
+
+#education {
+    background: linear-gradient(135deg,#f5efff,#fff);
+}
+
+.timeline {
+    max-width: 850px;
+
+    margin: auto;
+
+    position: relative;
+}
+
+.timeline::before {
+    content: "";
+
+    position: absolute;
+
+    left: 25px;
+    top: 0;
+    bottom: 0;
+
+    width: 2px;
+
+    background: linear-gradient(var(--pink),var(--lavender));
+}
+
+.timeline-item {
+    position: relative;
+
+    padding-left: 75px;
+
+    margin-bottom: 50px;
+}
+
+.timeline-dot {
+    position: absolute;
+
+    left: 12px;
+    top: 5px;
+
+    width: 28px;
+    height: 28px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    border: 6px solid var(--pink);
+
+    transition: .4s;
+}
+
+.timeline-item:hover .timeline-dot {
+    transform: scale(1.3);
+}
+
+.timeline-card {
+    padding: 25px;
+
+    border-radius: 22px;
+
+    background: white;
+
+    border: 1px solid var(--border);
+
+    box-shadow: 0 10px 30px rgba(70,50,90,.07);
+
+    transition: .35s;
+}
+
+.timeline-card:hover {
+    transform: translateX(7px);
+
+    box-shadow: 0 16px 35px rgba(70,50,90,.11);
+}
+
+.timeline-card h3 {
+    color: var(--purple);
+
+    margin-bottom: 8px;
+}
+
+
+/* ================= CERTIFICATIONS ================= */
+
+#achievements {
+    background: white;
+}
+
+.certificate-intro {
+    max-width: 700px;
+
+    line-height: 1.8;
+
+    margin-bottom: 40px;
+}
+
+.certificate-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3,1fr);
+
+    gap: 28px;
+}
+
+.certificate {
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: 25px;
+
+    overflow: hidden;
+
+    cursor: pointer;
+
+    transition: .45s ease;
+
+    box-shadow: 0 10px 25px rgba(70,40,80,.05);
+}
+
+.certificate:hover {
+    transform: translateY(-10px) rotate(-.5deg);
+
+    box-shadow: 0 25px 50px rgba(80,50,100,.14);
+
+    border-color: var(--pink);
+}
+
+.certificate-image {
+    height: 230px;
+
+    background: #f8f0f7;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.certificate-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: .5s ease;
+}
+
+.certificate:hover .certificate-image img {
+    transform: scale(1.05);
+}
+
+.certificate-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(48,36,61,.45);
+
+    opacity: 0;
+
+    transition: .35s ease;
+}
+
+.certificate:hover .certificate-overlay {
+    opacity: 1;
+}
+
+.certificate-overlay span {
+    padding: 11px 17px;
+
+    background: white;
+
+    color: var(--dark);
+
+    border-radius: 30px;
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+.certificate-content {
+    padding: 22px;
+}
+
+.certificate-content h3 {
+    font-family: 'Playfair Display', serif;
+
+    font-size: 21px;
+
+    color: var(--dark);
+
+    margin-bottom: 7px;
+}
+
+.certificate-content p {
+    color: #817489;
+
+    font-size: 13px;
+}
+
+
+/* ================= CERTIFICATE MODAL ================= */
+
+.certificate-modal {
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(32,22,40,.78);
+
+    backdrop-filter: blur(8px);
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+
+    z-index: 2000;
+
+    animation: modalFade .3s ease;
+}
+
+.certificate-modal.active {
+    display: flex;
+}
+
+.certificate-modal-content {
+    position: relative;
+
+    max-width: 900px;
+
+    max-height: 90vh;
+
+    background: white;
+
+    border-radius: 25px;
+
+    padding: 20px;
+
+    text-align: center;
+
+    animation: modalScale .35s ease;
+}
+
+.certificate-modal-content img {
+    max-width: 100%;
+
+    max-height: 72vh;
+
+    object-fit: contain;
+
+    border-radius: 12px;
+}
+
+.certificate-modal-content h3 {
+    margin-top: 15px;
+
+    color: var(--dark);
+
+    font-family: 'Playfair Display', serif;
+}
+
+.modal-close {
+    position: absolute;
+
+    top: -15px;
+    right: -15px;
+
+    width: 42px;
+    height: 42px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: white;
+
+    color: var(--dark);
+
+    font-size: 25px;
+
+    cursor: pointer;
+
+    box-shadow: 0 8px 20px rgba(0,0,0,.18);
+
+    z-index: 3;
+}
+
+.modal-close:hover {
+    background: var(--pink);
+
+    color: white;
+}
+
+@keyframes modalFade {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes modalScale {
+
+    from {
+        opacity: 0;
+        transform: scale(.88);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+/* ================= CONTACT ================= */
+
+#contact {
+    min-height: 80vh;
+
+    background: linear-gradient(135deg,#f5e8ff,#ffeef7);
+
+    text-align: center;
+}
+
+.contact-text {
+    max-width: 600px;
+
+    margin: 0 auto 40px;
+
+    line-height: 1.8;
+}
+
+.contact-grid {
+    max-width: 850px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(4,1fr);
+
+    gap: 15px;
+}
+
+.contact-card {
+    padding: 25px;
+
+    border-radius: 22px;
+
+    background: white;
+
+    text-decoration: none;
+
+    color: var(--dark);
+
+    border: 1px solid var(--border);
+
+    transition: .35s;
+}
+
+.contact-card:hover {
+    transform: translateY(-8px);
+
+    background: var(--pink);
+
+    color: white;
+
+    box-shadow: 0 15px 30px rgba(243,154,194,.3);
+}
+
+.contact-icon {
+    font-size: 30px;
+
+    margin-bottom: 10px;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+    padding: 25px;
+
+    text-align: center;
+
+    background: var(--dark);
+
+    color: white;
+}
+
+footer span {
+    color: var(--pink);
+}
+
+
+/* ================= REVEAL ================= */
+
+.reveal {
+    opacity: 0;
+
+    transform: translateY(35px);
+
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
+}
+
+.reveal.show {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:900px) {
+
+    .nav-links {
+        display: none;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+
+        text-align: center;
+    }
+
+    .hero p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .buttons {
+        justify-content: center;
+    }
+
+    .photo-card {
+        width: 300px;
+        height: 350px;
+    }
+
+    .photo-orbit {
+        width: 350px;
+        height: 350px;
+    }
+
+    .about-box {
+        grid-template-columns: 1fr;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-inner {
+        grid-template-columns: 1fr;
+    }
+
+    .certificate-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .contact-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media(max-width:550px) {
+
+    section {
+        padding: 100px 5% 60px;
+    }
+
+    .hero h1 {
+        font-size: 52px;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .photo-card {
+        width: 260px;
+        height: 310px;
+    }
+
+    .photo-orbit {
+        width: 300px;
+        height: 300px;
+    }
+
+    .project-title {
+        font-size: 24px;
+    }
+
+    .certificate-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .certificate-image {
+        height: 250px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+                         NAVIGATION
+========================================================= -->
+
+<nav>
+
+    <div class="logo">
+        Hiya <span>♡</span>
+    </div>
+
+    <ul class="nav-links">
+
+        <li>
+            <a href="#home">Home</a>
+        </li>
+
+        <li>
+            <a href="#about">About</a>
+        </li>
+
+        <li>
+            <a href="#skills">Skills</a>
+        </li>
+
+        <li>
+            <a href="#projects">Projects</a>
+        </li>
+
+        <li>
+            <a href="#education">Education</a>
+        </li>
+
+        <li>
+            <a href="#achievements">Achievements</a>
+        </li>
+
+        <li>
+            <a href="#contact">Contact</a>
+        </li>
+
+    </ul>
+
+</nav>
+
+
+<!-- =========================================================
+                            HOME
+========================================================= -->
+
+<section id="home">
+
+    <div class="decor one">✦</div>
+
+    <div class="decor two">♡</div>
+
+    <div class="decor three">✧</div>
+
+
+    <div class="hero">
+
+
+        <div class="reveal">
+
+            <div class="eyebrow">
+                ✦ ACADEMIC PORTFOLIO · 2026
+            </div>
+
+
+            <h1>
+
+                Hi, I'm<br>
+
+                <span>
+                    Hiya Shrimali ♡
+                </span>
+
+            </h1>
+
+
+            <h2>
+                B.Tech Computer Science & Engineering Student
+            </h2>
+
+
+            <p>
+
+                I'm a curious CSE student exploring technology through
+                programming, problem-solving and hands-on projects.
+                I enjoy learning, experimenting and turning ideas into
+                practical solutions.
+
+            </p>
+
+
+            <div class="buttons">
+
+                <a
+                    href="#projects"
+                    class="btn btn-primary">
+
+                    Explore My Projects →
+
+                </a>
+
+
+                <!-- REPLACE # WITH YOUR CV LINK -->
+
+                <a
+                    href="#"
+                    class="btn btn-secondary">
+
+                    ↓ View CV
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= PHOTO ================= -->
+
+        <div class="photo-wrapper reveal">
+
+            <div class="photo-orbit"></div>
+
+
+            <div class="photo-card">
+
+                <!--
+                    PUT YOUR PHOTO IN THE SAME FOLDER
+                    AS THIS HTML FILE.
+
+                    NAME IT:
+
+                    hiya.jpg
+                -->
+
+                <img
+                    src="hiya.jpeg"
+                    alt="Hiya Shrimali">
+
+            </div>
+
+
+            <div class="floating-tag tag-one">
+                💻 CSE Student
+            </div>
+
+
+            <div class="floating-tag tag-two">
+                ✨ Curious Learner
+            </div>
+
+
+            <div class="floating-tag tag-three">
+                ♡ Problem Solver
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+                            ABOUT
+========================================================= -->
+
+<section id="about">
+
+    <div class="about-container reveal">
+
+
+        <div class="section-label">
+            01 · ABOUT ME
+        </div>
+
+
+        <h2 class="section-title">
+
+            Learning with curiosity,<br>
+
+            building with purpose.
+
+        </h2>
+
+
+        <div class="about-box">
+
+
+            <div class="about-text">
+
+                <p>
+
+                    I'm Hiya Shrimali, a second-year B.Tech Computer
+                    Science & Engineering student at Lovely Professional
+                    University.
+
+                </p>
+
+
+                <br>
+
+
+                <p>
+
+                    I'm exploring different areas of technology through
+                    programming, problem-solving, web technologies and
+                    hands-on academic projects. I enjoy learning new
+                    concepts and applying them through practical work.
+
+                </p>
+
+
+                <br>
+
+
+                <p>
+
+                    My portfolio reflects my learning journey, projects,
+                    technical interests and experiences as I continue
+                    discovering the areas of technology that interest me.
+
+                </p>
+
+            </div>
+
+
+            <div class="interests">
+
+
+                <div class="interest">
+
+                    ✦ <strong>Interests</strong><br>
+
+                    Programming & technology
+
+                </div>
+
+
+                <div class="interest">
+
+                    ✦ <strong>Learning</strong><br>
+
+                    Data structures & problem-solving
+
+                </div>
+
+
+                <div class="interest">
+
+                    ✦ <strong>Exploring</strong><br>
+
+                    Web & emerging technologies
+
+                </div>
+
+
+                <div class="interest">
+
+                    ✦ <strong>Approach</strong><br>
+
+                    Learn → Build → Improve
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+                            SKILLS
+========================================================= -->
+
+<section id="skills">
+
+    <div class="reveal">
+
+
+        <div class="section-label">
+            02 · SKILLS
+        </div>
+
+
+        <h2 class="section-title">
+            My Tech Universe ✦
+        </h2>
+
+
+        <p class="skills-intro">
+
+            A collection of technologies and concepts I've explored
+            through coursework, practice and projects.
+
+        </p>
+
+
+        <div class="skills-grid">
+
+
+            <!-- PROGRAMMING -->
+
+            <div class="skill-category">
+
+                <div class="skill-heading">
+
+                    <div class="skill-heading-icon">
+                        💻
+                    </div>
+
+                    <h3>
+                        Programming
+                    </h3>
+
+                </div>
+
+
+                <div class="skill-pills">
+
+                    <div class="skill-pill">
+                        C
+                    </div>
+
+                    <div class="skill-pill">
+                        C++
+                    </div>
+
+                    <div class="skill-pill">
+                        Python
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- WEB -->
+
+            <div class="skill-category">
+
+                <div class="skill-heading">
+
+                    <div class="skill-heading-icon">
+                        🌐
+                    </div>
+
+                    <h3>
+                        Web Development
+                    </h3>
+
+                </div>
+
+
+                <div class="skill-pills">
+
+                    <div class="skill-pill">
+                        HTML
+                    </div>
+
+                    <div class="skill-pill">
+                        CSS
+                    </div>
+
+                    <div class="skill-pill">
+                        JavaScript
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- DATABASE -->
+
+            <div class="skill-category">
+
+                <div class="skill-heading">
+
+                    <div class="skill-heading-icon">
+                        🗄️
+                    </div>
+
+                    <h3>
+                        Database
+                    </h3>
+
+                </div>
+
+
+                <div class="skill-pills">
+
+                    <div class="skill-pill">
+                        MySQL
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- TOOLS -->
+
+            <div class="skill-category">
+
+                <div class="skill-heading">
+
+                    <div class="skill-heading-icon">
+                        🛠️
+                    </div>
+
+                    <h3>
+                        Tools
+                    </h3>
+
+                </div>
+
+
+                <div class="skill-pills">
+
+                    <div class="skill-pill">
+                        Git
+                    </div>
+
+                    <div class="skill-pill">
+                        GitHub
+                    </div>
+
+                    <div class="skill-pill">
+                        VS Code
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- CORE -->
+
+            <div class="skill-category">
+
+                <div class="skill-heading">
+
+                    <div class="skill-heading-icon">
+                        🧩
+                    </div>
+
+                    <h3>
+                        Core Concepts
+                    </h3>
+
+                </div>
+
+
+                <div class="skill-pills">
+
+                    <div class="skill-pill">
+                        DSA
+                    </div>
+
+                    <div class="skill-pill">
+                        OOP
+                    </div>
+
+                    <div class="skill-pill">
+                        Problem Solving
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- EXPLORING -->
+
+            <div class="skill-category">
+
+                <div class="skill-heading">
+
+                    <div class="skill-heading-icon">
+                        ✦
+                    </div>
+
+                    <h3>
+                        Exploring
+                    </h3>
+
+                </div>
+
+
+                <div class="skill-pills">
+
+                    <div class="skill-pill">
+                        Emerging Technologies
+                    </div>
+
+                    <div class="skill-pill">
+                        Software Concepts
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+                           PROJECTS
+========================================================= -->
+
+<section id="projects">
+
+    <div class="reveal">
+
+
+        <div class="section-label">
+            03 · PROJECTS
+        </div>
+
+
+        <h2 class="section-title">
+            What I've built ✦
+        </h2>
+
+
+        <p class="projects-intro">
+
+            A selection of projects where I've applied programming,
+            problem-solving and hands-on technical learning.
+            Click a project to explore its story.
+
+        </p>
+
+
+        <div class="project-list">
+
+
+            <!-- =================================================
+                              PROJECT 1
+            ================================================== -->
+
+            <div class="project">
+
+
+                <div
+                    class="project-header"
+                    onclick="toggleProject(this.parentElement)"
+                >
+
+                    <div>
+
+                        <div class="project-number">
+                            01 · PYTHON PROJECT
+                        </div>
+
+
+                        <div class="project-title">
+                            Hangman Game
+                        </div>
+
+
+                        <div class="project-subtitle">
+
+                            A console-based word guessing game
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="project-arrow">
+                        +
+                    </div>
+
+                </div>
+
+
+                <div class="project-details">
+
+
+                    <div class="project-inner">
+
+
+                        <div class="project-image">
+                            🎮
+                        </div>
+
+
+                        <div class="project-info">
+
+
+                            <div>
+
+                                <strong>
+                                    Problem
+                                </strong>
+
+                                <br>
+
+                                Create an interactive word-guessing game
+                                that uses programming logic to manage
+                                guesses, attempts and game progress.
+
+                            </div>
+
+
+                            <div>
+
+                                <strong>
+                                    Technology
+                                </strong>
+
+
+                                <div class="tech-tags">
+
+                                    <span class="tech-tag">
+                                        Python
+                                    </span>
+
+                                    <span class="tech-tag">
+                                        Loops
+                                    </span>
+
+                                    <span class="tech-tag">
+                                        Conditional Logic
+                                    </span>
+
+                                    <span class="tech-tag">
+                                        Strings
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div>
+
+                                <strong>
+                                    Result
+                                </strong>
+
+                                <br>
+
+                                Built a playable Hangman game where the
+                                user guesses letters to identify the
+                                hidden word while tracking attempts.
+
+                            </div>
+
+
+                            <div>
+
+                                <strong>
+                                    Learning
+                                </strong>
+
+                                <br>
+
+                                Practiced loops, conditions, strings,
+                                user input and game-state logic.
+
+                            </div>
+
+
+                            <div>
+
+                                <strong>
+                                    Project Link
+                                </strong>
+
+                                <br><br>
+
+
+                                <!-- REPLACE # WITH YOUR GITHUB LINK -->
+
+                                <a
+                                    href="https://github.com/Hiya-04/CodeAlpha_Hangman"
+                                    class="btn btn-primary"
+                                >
+                                    GitHub →
+                                </a>
+
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                              PROJECT 2
+            ================================================== -->
+
+            <div class="project">
+
+
+                <div
+                    class="project-header"
+                    onclick="toggleProject(this.parentElement)"
+                >
+
+                    <div>
+
+                        <div class="project-number">
+                            02 · PYTHON PROJECT
+                        </div>
+
+
+                        <div class="project-title">
+                            Stock Portfolio Tracker
+                        </div>
+
+
+                        <div class="project-subtitle">
+
+                            A simple stock price lookup application
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="project-arrow">
+                        +
+                    </div>
+
+                </div>
+
+
+                <div class="project-details">
+
+
+                    <div class="project-inner">
+
+
+                        <div class="project-image">
+                            📈
+                        </div>
+
+
+                        <div class="project-info">
+
+
+                            <div>
+
+                                <strong>
+                                    Problem
+                                </strong>
+
+                                <br>
+
+                                Create a simple way for users to enter
+                                a stock name and retrieve its stored
+                                price.
+
+                            </div>
+
+
+                            <div>
+
+                                <strong>
+                                    Technology
+                                </strong>
+
+
+                                <div class="tech-tags">
+
+                                    <span class="tech-tag">
+                                        Python
+                                    </span>
+
+                                    <span class="tech-tag">
+                                        Dictionary
+                                    </span>
+
+                                    <span class="tech-tag">
+                                        Input Handling
+                                    </span>
+
+                                    <span class="tech-tag">
+                                        Validation
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div>
+
+                                <strong>
+                                    Result
+                                </strong>
+
+                                <br>
+
+                                Built a Python-based tracker containing
+                                stock-price data and allowing users to
+                                search for stocks through the program.
+
+                            </div>
+
+
+                            <div>
+
+                                <strong>
+                                    Learning
+                                </strong>
+
+                                <br>
+
+                                Practiced dictionaries, user input,
+                                string handling, validation and
+                                control flow.
+
+                            </div>
+
+
+                            <div>
+
+                                <strong>
+                                    Project Link
+                                </strong>
+
+                                <br><br>
+
+
+                                <!-- REPLACE # WITH YOUR GITHUB LINK -->
+
+                                <a
+                                    href="https://github.com/Hiya-04/CodeAlpha_StockPortfolioTracker"
+                                    class="btn btn-primary"
+                                >
+                                    GitHub →
+                                </a>
+
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                              PROJECT 3
+            ================================================== -->
+
+            <div class="project">
+
+
+                <div
+                    class="project-header"
+                    onclick="toggleProject(this.parentElement)"
+                >
+
+                    <div>
+
+                        <div class="project-number">
+                            03 · ECE 279 PROJECT
+                        </div>
+
+
+                        <div class="project-title">
+
+                            Smart Vehicle-to-Traffic
+                            Signal Communication System
+
+                        </div>
+
+
+                        <div class="project-subtitle">
+
+                            Safe driving assistance in
+                            low-visibility conditions
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="project-arrow">
+                        +
+                    </div>
+
+                </div>
+
+
+                <div class="project-details">
+
+
+                    <div class="project-inner">
+
+
+                        <div class="project-image">
+                            🚦
+                        </div>
+
+
+                        <div class="project-info">
+
+
+                            <div>
+
+                                <strong>
+                                    Problem
+                                </strong>
+
+                                <br>
+
+                                Improve driver awareness at intersections
+                                during fog, heavy rain and other
+                                low-visibility conditions.
+
+                            </div>
+
+
+                            <div>
+
+                                <strong>
+                                    Technology
+                                </strong>
+
+
+                                <div class="tech-tags">
+
+                                    <span class="tech-tag">
+                                        ESP32
+                                    </span>
+
+                                    <span class="tech-tag">
+                                        DHT22
+                                    </span>
+
+                                    <span class="tech-tag">
+                                        LDR
+                                    </span>
+
+                                    <span class="tech-tag">
+                                        IR Sensor
+                                    </span>
+
+                                    <span class="tech-tag">
+                                        LEDs
+                                    </span>
+
+                                    <span class="tech-tag">
+                                        GPS
+                                    </span>
+
+                                    <span class="tech-tag">
+                                        Web App
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div>
+
+                                <strong>
+                                    Result
+                                </strong>
+
+                                <br>
+
+                                The system monitors weather conditions,
+                                visibility, traffic density and traffic
+                                signal states, then communicates live
+                                signal information and safety recommendations
+                                to a smartphone-based application.
+
+                            </div>
+
+
+                            <div>
+
+                                <strong>
+                                    Learning
+                                </strong>
+
+                                <br>
+
+                                Gained hands-on exposure to sensors,
+                                ESP32-based processing, embedded systems,
+                                real-time monitoring and smartphone
+                                communication.
+
+                            </div>
+
+
+                            <div>
+
+                                <strong>
+                                    Project Link
+                                </strong>
+
+                                <br><br>
+
+
+                                <!-- REPLACE # WITH YOUR PROJECT LINK -->
+
+                                <a
+                                    href="#"
+                                    class="btn btn-primary"
+                                >
+                                    View Project →
+                                </a>
+
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+                           EDUCATION
+========================================================= -->
+
+<section id="education">
+
+    <div class="reveal">
+
+
+        <div class="section-label">
+            04 · EDUCATION
+        </div>
+
+
+        <h2 class="section-title">
+            My journey 📚
+        </h2>
+
+
+        <div class="timeline">
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+
+                <div class="timeline-card">
+
+                    <h3>
+                        2025 – 2029
+                    </h3>
+
+
+                    <h2>
+                        B.Tech Computer Science & Engineering
+                    </h2>
+
+
+                    <p>
+                        Lovely Professional University
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+
+                <div class="timeline-card">
+
+                    <h3>
+                        Class XII
+                    </h3>
+
+
+                    <h2>
+                        St. Mary's Convent Sr. Sec. School
+                    </h2>
+
+
+                    <p>
+                        Udaipur, Rajasthan
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+
+                <div class="timeline-card">
+
+                    <h3>
+                        Class X
+                    </h3>
+
+
+                    <h2>
+                        St. Mary's Convent Sr. Sec. School
+                    </h2>
+
+
+                    <p>
+                        Udaipur, Rajasthan
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+                  CERTIFICATIONS & ACHIEVEMENTS
+========================================================= -->
+
+<section id="achievements">
+
+    <div class="reveal">
+
+
+        <div class="section-label">
+            05 · CERTIFICATIONS & ACHIEVEMENTS
+        </div>
+
+
+        <h2 class="section-title">
+            Certifications & Highlights ♡
+        </h2>
+
+
+        <p class="certificate-intro">
+
+            A collection of certifications and experiences from
+            my learning journey.
+
+        </p>
+
+
+        <div class="certificate-grid">
+
+
+            <!-- =================================================
+                           CERTIFICATE 1
+            ================================================== -->
+
+            <div
+                class="certificate"
+                onclick="openCertificate(
+                    'Screenshot 2026-08-31 213755.png',
+                    'Introduction to AI'
+                )"
+            >
+
+                <div class="certificate-image">
+
+                    <img
+                        src="Screenshot 2026-08-31 213755.png"
+                        alt="Introduction to AI"
+                    >
+
+
+                    <div class="certificate-overlay">
+
+                        <span>
+                            🔍 View Certificate
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="certificate-content">
+
+                    <h3>
+                        Introduction to AI
+                    </h3>
+
+
+                    <p>
+                        Infosys Springboard
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                           CERTIFICATE 2
+            ================================================== -->
+
+            <div
+                class="certificate"
+                onclick="openCertificate(
+                    'Screenshot 2026-08-31 213941.png',
+                    'Introduction to Prompt Engineering'
+                )"
+            >
+
+                <div class="certificate-image">
+
+                    <img
+                        src="Screenshot 2026-08-31 213941.png"
+                        alt="Introduction to Prompt Engineering"
+                    >
+
+
+                    <div class="certificate-overlay">
+
+                        <span>
+                            🔍 View Certificate
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="certificate-content">
+
+                    <h3>
+                        Introduction to Prompt Engineering
+                    </h3>
+
+
+                    <p>
+                        Microsoft
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                           CERTIFICATE 3
+            ================================================== -->
+
+            <div
+                class="certificate"
+                onclick="openCertificate(
+                    'Screenshot 2026-08-31 214033.png',
+                    'Introduction to Python'
+                )"
+            >
+
+                <div class="certificate-image">
+
+                    <img
+                        src="Screenshot 2026-08-31 214033.png"
+                        alt="Introduction to Python"
+                    >
+
+
+                    <div class="certificate-overlay">
+
+                        <span>
+                            🔍 View Certificate
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="certificate-content">
+
+                    <h3>
+                        Introduction to Python
+                    </h3>
+
+
+                    <p>
+                        Infosys Springboard
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                         HACKATHON CERTIFICATE
+            ================================================== -->
+
+            <div
+                class="certificate"
+                onclick="openCertificate(
+                    'WhatsApp Image 2026-08-31 at 10.42.31 PM.jpeg',
+                    'Hackathon Participation'
+                )"
+            >
+
+                <div class="certificate-image">
+
+                    <img
+                        src="WhatsApp Image 2026-08-31 at 10.42.31 PM.jpeg"
+                        alt="Hackathon Participation Certificate"
+                    >
+
+
+                    <div class="certificate-overlay">
+
+                        <span>
+                            🔍 View Certificate
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="certificate-content">
+
+                    <h3>
+                        Hackathon Participation
+                    </h3>
+
+
+                    <p>
+                        Participation Certificate
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+                       CERTIFICATE MODAL
+========================================================= -->
+
+<div
+    id="certificateModal"
+    class="certificate-modal"
+    onclick="closeCertificate(event)"
+>
+
+
+    <div class="certificate-modal-content">
+
+
+        <button
+            class="modal-close"
+            onclick="closeCertificate(event)"
+        >
+            ×
+        </button>
+
+
+        <img
+            id="modalCertificate"
+            src=""
+            alt="Certificate"
+        >
+
+
+        <h3
+            id="modalCertificateName"
+        ></h3>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+                            CONTACT
+========================================================= -->
+
+<section id="contact">
+
+    <div class="reveal">
+
+
+        <div class="section-label">
+            06 · CONNECT
+        </div>
+
+
+        <h2 class="section-title">
+            Let's connect ♡
+        </h2>
+
+
+        <p class="contact-text">
+
+            Thank you for exploring my portfolio.
+            Feel free to connect with me through
+            any of the platforms below.
+
+        </p>
+
+
+        <div class="contact-grid">
+
+
+            <!-- REPLACE # WITH YOUR GITHUB LINK -->
+
+            <a
+                href="https://github.com/Hiya-04"
+                class="contact-card"
+            >
+
+                <div class="contact-icon">
+                    🐙
+                </div>
+
+                <strong>
+                    GitHub
+                </strong>
+
+            </a>
+
+
+
+            <!-- REPLACE # WITH YOUR LINKEDIN LINK -->
+
+            <a
+                href="https://www.linkedin.com/in/hiya-shrimali-a63780373/"
+                class="contact-card"
+            >
+
+                <div class="contact-icon">
+                    💼
+                </div>
+
+                <strong>
+                    LinkedIn
+                </strong>
+
+            </a>
+
+
+
+            <!-- REPLACE EMAIL -->
+
+            <a
+                href="mailto:shrimalihiya04@gmail.com"
+                class="contact-card"
+            >
+
+                <div class="contact-icon">
+                    💌
+                </div>
+
+                <strong>
+                    Email
+                </strong>
+
+            </a>
+
+
+
+            <!-- REPLACE # WITH YOUR CV LINK -->
+
+            <a
+                href="#"
+                class="contact-card"
+            >
+
+                <div class="contact-icon">
+                    📄
+                </div>
+
+                <strong>
+                    CV
+                </strong>
+
+            </a>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+                            FOOTER
+========================================================= -->
+
+<footer>
+
+    Designed & built by
+
+    <span>
+        Hiya Shrimali ♡
+    </span>
+
+</footer>
+
+
+
+<script>
+
+
+/* =========================================================
+                    PROJECT ACCORDION
+========================================================= */
+
+function toggleProject(project) {
+
+    document.querySelectorAll('.project').forEach(item => {
+
+        if (item !== project) {
+
+            item.classList.remove('open');
+
+        }
+
+    });
+
+
+    project.classList.toggle('open');
+
+}
+
+
+
+/* =========================================================
+                       SCROLL REVEAL
+========================================================= */
+
+const observer = new IntersectionObserver(
+
+    entries => {
+
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+                entry.target.classList.add('show');
+
+            }
+
+        });
+
+    },
+
+    {
+        threshold: 0.12
+    }
+
+);
+
+
+document
+    .querySelectorAll('.reveal')
+    .forEach(element => {
+
+        observer.observe(element);
+
+    });
+
+
+
+/* =========================================================
+                    ACTIVE NAVIGATION
+========================================================= */
+
+const sections =
+    document.querySelectorAll('section');
+
+const navLinks =
+    document.querySelectorAll('.nav-links a');
+
+
+window.addEventListener('scroll', () => {
+
+
+    let current = '';
+
+
+    sections.forEach(section => {
+
+        const sectionTop =
+            section.offsetTop - 180;
+
+
+        if (window.scrollY >= sectionTop) {
+
+            current =
+                section.getAttribute('id');
+
+        }
+
+    });
+
+
+    navLinks.forEach(link => {
+
+        link.classList.remove('active');
+
+
+        if (
+            link.getAttribute('href') ===
+            '#' + current
+        ) {
+
+            link.classList.add('active');
+
+        }
+
+    });
+
+});
+
+
+
+/* =========================================================
+                    CERTIFICATE MODAL
+========================================================= */
+
+function openCertificate(image, name) {
+
+
+    const modal =
+        document.getElementById(
+            "certificateModal"
+        );
+
+
+    const modalImage =
+        document.getElementById(
+            "modalCertificate"
+        );
+
+
+    const modalName =
+        document.getElementById(
+            "modalCertificateName"
+        );
+
+
+    modalImage.src = image;
+
+    modalName.textContent = name;
+
+
+    modal.classList.add("active");
+
+
+    document.body.style.overflow =
+        "hidden";
+
+}
+
+
+
+function closeCertificate(event) {
+
+
+    if (
+
+        event.target.id ===
+        "certificateModal"
+
+        ||
+
+        event.target.classList.contains(
+            "modal-close"
+        )
+
+    ) {
+
+
+        document
+            .getElementById(
+                "certificateModal"
+            )
+            .classList.remove(
+                "active"
+            );
+
+
+        document.body.style.overflow =
+            "auto";
+
+    }
+
+}
+
+
+
+/* =========================================================
+                    ESCAPE MODAL
+========================================================= */
+
+document.addEventListener(
+    "keydown",
+    function(event) {
+
+        if (event.key === "Escape") {
+
+            document
+                .getElementById(
+                    "certificateModal"
+                )
+                .classList.remove(
+                    "active"
+                );
+
+            document.body.style.overflow =
+                "auto";
+
+        }
+
+    }
+);
+
+
+</script>
+
+</body>
+</html>
